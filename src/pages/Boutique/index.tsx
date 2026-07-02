@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { SectionReveal } from '../../components/ui/SectionReveal'
 import { ParallaxImage } from '../../components/ui/ParallaxImage'
-import { ProductBounceCard } from '../../components/ui/ProductBounceCard'
 
 function useMeta(title: string, description: string) {
   useEffect(() => {
