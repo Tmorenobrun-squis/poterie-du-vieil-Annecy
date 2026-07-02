@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(.claude/screenshots/*)",
+      "Bash(node scripts/screenshot.mjs)",
+      "Bash(find src*)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -f '.claude/screenshots/latest.png' ] && [ -z \"$(find src -name '*.tsx' -newer .claude/screenshots/latest.png 2>/dev/null | head -1)\" ] && exit 0; node scripts/screenshot.mjs",
+            "asyncRewake": true,
+            "timeout": 60,
+            "statusMessage": "Capture d'écran du site en cours…"
+          }
+        ]
+      }
+    ]
+  }
+}

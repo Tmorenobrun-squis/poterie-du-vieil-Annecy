@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#A23A2E"/>
+  <!-- ✻ six-pointed asterisk as radial lines -->
+  <g stroke="#FAF6EF" stroke-width="2" stroke-linecap="round">
+    <line x1="16" y1="7"  x2="16" y2="25"/>
+    <line x1="7"  y1="11.5" x2="25" y2="20.5"/>
+    <line x1="25" y1="11.5" x2="7"  y2="20.5"/>
+  </g>
+  <!-- small dots at tips -->
+  <g fill="#FAF6EF">
+    <circle cx="16" cy="6.5"  r="1.2"/>
+    <circle cx="16" cy="25.5" r="1.2"/>
+    <circle cx="6.5"  cy="11.2" r="1.2"/>
+    <circle cx="25.5" cy="20.8" r="1.2"/>
+    <circle cx="25.5" cy="11.2" r="1.2"/>
+    <circle cx="6.5"  cy="20.8" r="1.2"/>
+  </g>
+</svg>
