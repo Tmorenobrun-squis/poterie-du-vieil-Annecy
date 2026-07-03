@@ -86,136 +86,116 @@ function HeroSection() {
       {/* Photo de fond */}
       <div className="absolute inset-0" aria-hidden="true">
         <img
-          src="/images/Hero3.png"
-          alt="Intérieur de la boutique — étagères garnies de céramiques et poteries artisanales"
+          src="/images/Boutique.png"
+          alt="Façade de la boutique La Poterie du Vieil Annecy, rue Sainte-Claire, la nuit"
           width="1920"
           height="1080"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="eager"
           fetchPriority="high"
         />
-        {/* Dégradé desktop : crème de gauche à droite */}
+        {/* Overlay dégradé bas */}
         <div
-          className="absolute inset-0 hidden md:block"
+          className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to right, rgba(250,246,239,0.86) 0%, rgba(250,246,239,0.80) 36%, rgba(250,246,239,0.52) 50%, rgba(250,246,239,0.12) 60%, transparent 100%)',
+              'linear-gradient(to top, rgba(10,7,5,0.75) 0%, rgba(10,7,5,0.46) 30%, rgba(10,7,5,0.20) 60%, rgba(10,7,5,0.06) 100%)',
           }}
         />
-        {/* Dégradé mobile : crème du bas vers le haut */}
+        {/* Vignette centrale — assombrit la vitrine lumineuse derrière le texte */}
         <div
-          className="absolute inset-0 md:hidden"
+          className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, rgba(250,246,239,0.98) 0%, rgba(250,246,239,0.94) 35%, rgba(250,246,239,0.7) 58%, rgba(250,246,239,0.18) 80%, transparent 100%)',
+              'radial-gradient(ellipse 75% 65% at 50% 50%, rgba(10,7,5,0.45) 0%, rgba(10,7,5,0.18) 55%, transparent 80%)',
           }}
         />
       </div>
 
-      {/* Contenu */}
-      <div
-        className="relative z-10 h-full flex flex-col justify-end md:justify-between gap-4 md:gap-0 px-5 md:pl-16 lg:pl-20 md:pr-12 pt-[88px] pb-10 w-full md:max-w-[47%]"
-      >
+      {/* Contenu centré */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center pt-20 px-5 text-center">
 
-        {/* 1 — Badge (desktop uniquement) */}
-        <motion.div
-          className="hidden md:inline-flex items-center gap-2 bg-sable/70 border border-encre/12 rounded-full px-3.5 py-1.5 self-start"
-          initial={prefersReduced ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05, duration: 0.5 }}
-        >
-          <CroixDeSavoie size={15} />
-          <span className="font-mulish text-[11px] font-bold text-encre/80 tracking-widest uppercase">
-            Haute-Savoie · Annecy
-          </span>
-        </motion.div>
-
-        {/* 2 — Accroche Caveat */}
+        {/* Accroche Caveat */}
         <motion.span
-          className="font-caveat text-terracotta leading-tight block"
-          style={{ fontSize: 'clamp(1.6rem, 5vw, 2.6rem)' }}
+          className="font-caveat text-sable block mb-3"
+          style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.1rem)', textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}
           initial={prefersReduced ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.12, duration: 0.55 }}
+          transition={{ delay: 0.1, duration: 0.55 }}
         >
           Sous les arcades du vieil Annecy
         </motion.span>
 
-        {/* 3 — Titre principal */}
+        {/* Titre principal */}
         <motion.h1
-          className="font-fraunces text-encre leading-[1.06]"
-          style={{ fontSize: 'clamp(2.4rem, 7vw, 4.8rem)', letterSpacing: '-0.01em' }}
-          initial={prefersReduced ? false : { opacity: 0, y: 20 }}
+          className="font-fraunces text-sable leading-[1.0] mb-8"
+          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.03em', textShadow: '0 2px 20px rgba(0,0,0,0.65)' }}
+          initial={prefersReduced ? false : { opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.22, duration: 0.6 }}
+          transition={{ delay: 0.22, duration: 0.7 }}
         >
-          L'artisanat savoyard
+          La terre.{' '}
+          <em className="not-italic text-terracotta">Les mains.</em>
           <br />
-          <em
-            className="not-italic text-terracotta"
-            style={{ fontSize: 'clamp(2.8rem, 8.5vw, 5.8rem)' }}
-          >
-            à portée de main
-          </em>
+          Les Alpes.
         </motion.h1>
 
-        {/* 4 — Description (masquée sur mobile) */}
+        {/* Description */}
         <motion.p
-          className="hidden sm:block font-mulish text-encre/70 leading-relaxed"
-          style={{ fontSize: 'clamp(1rem, 1.3vw, 1.2rem)' }}
-          initial={prefersReduced ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.55 }}
-        >
-          Poteries, bijoux, décorations, illustrations — tout est créé
-          par des artisans locaux. Boutique vitrine, entrée libre,
-          15&nbsp;rue Sainte-Claire.
-        </motion.p>
-
-        {/* 5 — CTAs */}
-        <motion.div
-          className="flex flex-wrap gap-3"
+          className="font-mulish text-sable text-[14.5px] md:text-[16px] leading-relaxed max-w-[480px] mb-9"
+          style={{ textShadow: '0 1px 12px rgba(0,0,0,0.95)' }}
           initial={prefersReduced ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.48, duration: 0.5 }}
+          transition={{ delay: 0.38, duration: 0.6 }}
+        >
+          Poteries, bijoux, décorations et illustrations créés par des artisans savoyards.
+          Boutique vitrine, entrée libre — 15 rue Sainte-Claire.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          className="flex flex-wrap gap-3 justify-center mb-8"
+          initial={prefersReduced ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.52, duration: 0.5 }}
         >
           <Link
             to="/boutique"
-            className="inline-flex items-center px-6 py-3.5 md:px-7 md:py-4 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[15px] hover:bg-terracotta/85 transition-colors duration-200 shadow-[0_6px_18px_-6px_rgba(162,58,46,0.5)]"
+            className="inline-flex items-center px-7 py-3.5 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[15px] hover:bg-terracotta/85 transition-colors duration-200 shadow-[0_8px_24px_-6px_rgba(162,58,46,0.65)]"
           >
             Découvrir la boutique
           </Link>
           <Link
-            to="/univers"
-            className="inline-flex items-center px-6 py-3.5 md:px-7 md:py-4 rounded-full border border-encre/25 text-encre font-mulish font-semibold text-[15px] hover:bg-encre/5 transition-colors duration-200"
+            to="/contact"
+            className="inline-flex items-center px-7 py-3.5 rounded-full border border-sable/30 text-sable font-mulish font-semibold text-[15px] hover:bg-sable/10 transition-colors duration-200"
           >
-            Nos univers
+            Nous trouver
           </Link>
         </motion.div>
 
-        {/* 6 — Tagline (masquée sur mobile) */}
+        {/* Tagline */}
         <motion.div
-          className="hidden sm:flex items-center gap-3"
+          className="flex items-center gap-4"
           initial={prefersReduced ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
+          transition={{ delay: 0.72, duration: 0.5 }}
         >
-          <span className="h-px w-8 bg-pierre/30" />
-          <span className="font-mulish text-[13px] text-pierre/55 tracking-widest uppercase">
+          <span className="h-px w-8 bg-sable/20" />
+          <span className="font-mulish text-[11px] text-sable/65 tracking-[0.2em] uppercase" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
             Poterie · Bijoux · Art de la table
           </span>
+          <span className="h-px w-8 bg-sable/20" />
         </motion.div>
-
       </div>
 
       {/* Flèche scroll */}
       <motion.div
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 md:left-[26%] z-10"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10"
         animate={prefersReduced ? {} : { y: [0, 7, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden="true"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(46,42,36,0.35)" strokeWidth="1.5" strokeLinecap="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(250,246,239,0.28)" strokeWidth="1.5" strokeLinecap="round">
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </motion.div>
