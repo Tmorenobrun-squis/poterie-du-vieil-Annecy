@@ -104,7 +104,7 @@ function ProductCard({ name, desc, img, onAdd }: { name: string; desc: string; i
         <button
           type="button"
           onClick={onAdd}
-          className="mt-1 w-full border-[1.5px] border-terracotta text-terracotta bg-transparent px-3 py-2 rounded-full font-mulish font-semibold text-[12.5px] cursor-pointer hover:bg-terracotta hover:text-sable transition-colors duration-200"
+          className="mt-1 w-full border-[1.5px] border-terracotta text-terracotta bg-transparent px-3 py-2 rounded-full font-mulish font-semibold text-[11px] sm:text-[12.5px] cursor-pointer hover:bg-terracotta hover:text-sable transition-colors duration-200 leading-snug"
         >
           + Ajouter à ma commande
         </button>

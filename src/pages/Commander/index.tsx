@@ -178,8 +178,7 @@ export default function CommanderPage() {
               {cart.map(line => (
                 <div
                   key={line.id}
-                  className="grid gap-2 items-center bg-sable border border-argile rounded-xl p-3"
-                  style={{ gridTemplateColumns: '1fr 72px 1.1fr 38px' }}
+                  className="flex flex-col gap-2 bg-sable border border-argile rounded-xl p-3"
                 >
                   <input
                     type="text"
@@ -187,24 +186,27 @@ export default function CommanderPage() {
                     onChange={e => updateLine(line.id, { name: e.target.value })}
                     aria-label="Nom du produit"
                     placeholder="Produit"
-                    className="border border-or rounded-lg px-3 py-2 bg-white font-mulish text-[14px] text-encre placeholder:text-pierre/60 focus:outline-none focus:ring-2 focus:ring-terracotta/40"
+                    className="w-full border border-or rounded-lg px-3 py-2 bg-white font-mulish text-[14px] text-encre placeholder:text-pierre/60 focus:outline-none focus:ring-2 focus:ring-terracotta/40"
                   />
-                  <input
-                    type="number"
-                    min={1}
-                    value={line.qty}
-                    onChange={e => updateLine(line.id, { qty: Math.max(1, parseInt(e.target.value, 10) || 1) })}
-                    aria-label="Quantité"
-                    className="border border-or rounded-lg px-3 py-2 bg-white font-mulish text-[14px] text-encre focus:outline-none focus:ring-2 focus:ring-terracotta/40"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeLine(line.id)}
-                    aria-label="Retirer cette ligne"
-                    className="w-[38px] h-[38px] border border-or bg-white rounded-lg cursor-pointer text-terracotta text-[18px] flex items-center justify-center hover:bg-argile transition-colors duration-150"
-                  >
-                    ×
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="number"
+                      min={1}
+                      value={line.qty}
+                      onChange={e => updateLine(line.id, { qty: Math.max(1, parseInt(e.target.value, 10) || 1) })}
+                      aria-label="Quantité"
+                      className="w-[80px] border border-or rounded-lg px-3 py-2 bg-white font-mulish text-[14px] text-encre focus:outline-none focus:ring-2 focus:ring-terracotta/40"
+                    />
+                    <span className="font-mulish text-[13px] text-pierre/60 flex-1">unité(s)</span>
+                    <button
+                      type="button"
+                      onClick={() => removeLine(line.id)}
+                      aria-label="Retirer cette ligne"
+                      className="w-[38px] h-[38px] border border-or bg-white rounded-lg cursor-pointer text-terracotta text-[18px] flex items-center justify-center hover:bg-argile transition-colors duration-150 shrink-0"
+                    >
+                      ×
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

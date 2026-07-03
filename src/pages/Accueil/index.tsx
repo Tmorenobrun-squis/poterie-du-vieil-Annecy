@@ -90,29 +90,36 @@ function HeroSection() {
           alt="Intérieur de la boutique — étagères garnies de céramiques et poteries artisanales"
           width="1920"
           height="1080"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           loading="eager"
           fetchPriority="high"
         />
-        {/* Dégradé crème — épouse le mur blanc de la photo */}
+        {/* Dégradé desktop : crème de gauche à droite */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             background:
-              'linear-gradient(to right, rgba(250,246,239,0.82) 0%, rgba(250,246,239,0.78) 36%, rgba(250,246,239,0.52) 48%, rgba(250,246,239,0.12) 57%, transparent 100%)',
+              'linear-gradient(to right, rgba(250,246,239,0.86) 0%, rgba(250,246,239,0.80) 36%, rgba(250,246,239,0.52) 50%, rgba(250,246,239,0.12) 60%, transparent 100%)',
+          }}
+        />
+        {/* Dégradé mobile : crème du bas vers le haut */}
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(250,246,239,0.98) 0%, rgba(250,246,239,0.94) 35%, rgba(250,246,239,0.7) 58%, rgba(250,246,239,0.18) 80%, transparent 100%)',
           }}
         />
       </div>
 
-      {/* Contenu — réparti du haut en bas du mur blanc */}
+      {/* Contenu */}
       <div
-        className="relative z-10 h-full flex flex-col justify-between pl-10 md:pl-16 lg:pl-20 pr-8 md:pr-12 pt-[88px] pb-10"
-        style={{ maxWidth: '47%' }}
+        className="relative z-10 h-full flex flex-col justify-end md:justify-between gap-4 md:gap-0 px-5 md:pl-16 lg:pl-20 md:pr-12 pt-[88px] pb-10 w-full md:max-w-[47%]"
       >
 
-        {/* 1 — Badge */}
+        {/* 1 — Badge (desktop uniquement) */}
         <motion.div
-          className="inline-flex items-center gap-2 bg-sable/70 border border-encre/12 rounded-full px-3.5 py-1.5 self-start"
+          className="hidden md:inline-flex items-center gap-2 bg-sable/70 border border-encre/12 rounded-full px-3.5 py-1.5 self-start"
           initial={prefersReduced ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.05, duration: 0.5 }}
@@ -126,7 +133,7 @@ function HeroSection() {
         {/* 2 — Accroche Caveat */}
         <motion.span
           className="font-caveat text-terracotta leading-tight block"
-          style={{ fontSize: 'clamp(1.8rem, 2.8vw, 2.6rem)' }}
+          style={{ fontSize: 'clamp(1.6rem, 5vw, 2.6rem)' }}
           initial={prefersReduced ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.12, duration: 0.55 }}
@@ -137,7 +144,7 @@ function HeroSection() {
         {/* 3 — Titre principal */}
         <motion.h1
           className="font-fraunces text-encre leading-[1.06]"
-          style={{ fontSize: 'clamp(3.2rem, 5vw, 4.8rem)', letterSpacing: '-0.01em' }}
+          style={{ fontSize: 'clamp(2.4rem, 7vw, 4.8rem)', letterSpacing: '-0.01em' }}
           initial={prefersReduced ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.22, duration: 0.6 }}
@@ -146,15 +153,15 @@ function HeroSection() {
           <br />
           <em
             className="not-italic text-terracotta"
-            style={{ fontSize: 'clamp(3.8rem, 6vw, 5.8rem)' }}
+            style={{ fontSize: 'clamp(2.8rem, 8.5vw, 5.8rem)' }}
           >
             à portée de main
           </em>
         </motion.h1>
 
-        {/* 4 — Description */}
+        {/* 4 — Description (masquée sur mobile) */}
         <motion.p
-          className="font-mulish text-encre/70 leading-relaxed"
+          className="hidden sm:block font-mulish text-encre/70 leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 1.3vw, 1.2rem)' }}
           initial={prefersReduced ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -174,21 +181,21 @@ function HeroSection() {
         >
           <Link
             to="/boutique"
-            className="inline-flex items-center px-7 py-4 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[15px] hover:bg-terracotta/85 transition-colors duration-200 shadow-[0_6px_18px_-6px_rgba(162,58,46,0.5)]"
+            className="inline-flex items-center px-6 py-3.5 md:px-7 md:py-4 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[15px] hover:bg-terracotta/85 transition-colors duration-200 shadow-[0_6px_18px_-6px_rgba(162,58,46,0.5)]"
           >
             Découvrir la boutique
           </Link>
           <Link
             to="/univers"
-            className="inline-flex items-center px-7 py-4 rounded-full border border-encre/25 text-encre font-mulish font-semibold text-[15px] hover:bg-encre/5 transition-colors duration-200"
+            className="inline-flex items-center px-6 py-3.5 md:px-7 md:py-4 rounded-full border border-encre/25 text-encre font-mulish font-semibold text-[15px] hover:bg-encre/5 transition-colors duration-200"
           >
             Nos univers
           </Link>
         </motion.div>
 
-        {/* 6 — Tagline */}
+        {/* 6 — Tagline (masquée sur mobile) */}
         <motion.div
-          className="flex items-center gap-3"
+          className="hidden sm:flex items-center gap-3"
           initial={prefersReduced ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
@@ -203,7 +210,7 @@ function HeroSection() {
 
       {/* Flèche scroll */}
       <motion.div
-        className="absolute bottom-7 left-[26%] -translate-x-1/2 z-10"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 md:left-[26%] z-10"
         animate={prefersReduced ? {} : { y: [0, 7, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
         aria-hidden="true"
@@ -223,7 +230,7 @@ function BandeauAtouts() {
       <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-pierre/10 rounded-2xl overflow-hidden">
           {ATOUTS.map((a) => (
-            <div key={a.label} className="bg-argile px-6 py-8 flex flex-col gap-4">
+            <div key={a.label} className="bg-argile px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-3 sm:gap-4">
               <div className="w-11 h-11 rounded-xl bg-terracotta flex items-center justify-center text-sable shrink-0">
                 {a.icon}
               </div>
