@@ -80,28 +80,19 @@ export function Header() {
           className="flex items-center gap-2.5 group shrink-0"
         >
           <span
-            aria-hidden="true"
             className={[
-              'w-[34px] h-[34px] rounded-full flex items-center justify-center text-[18px] transition-colors duration-300',
-              transparent ? 'bg-sable/20 text-sable' : 'bg-terracotta text-sable',
-            ].join(' ')}
-          >
-            ✻
-          </span>
-          <span
-            className={[
-              'font-fraunces font-semibold text-[19px] leading-[1.05] transition-colors duration-300',
+              'font-fraunces font-semibold text-[15px] leading-[1.15] transition-colors duration-300',
               transparent ? 'text-sable' : 'text-encre',
             ].join(' ')}
-            style={{ letterSpacing: '0.1px' }}
+            style={{ letterSpacing: '0.1em' }}
           >
             La Poterie
             <span
               className={[
-                'block text-[13px] font-medium transition-colors duration-300',
+                'block text-[11px] font-normal transition-colors duration-300',
                 transparent ? 'text-sable/70' : 'text-pierre',
               ].join(' ')}
-              style={{ letterSpacing: '0.4px' }}
+              style={{ letterSpacing: '0.08em' }}
             >
               du Vieil Annecy
             </span>
