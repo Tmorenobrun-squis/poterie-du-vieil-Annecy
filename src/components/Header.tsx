@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { PoterieLogo } from './ui/PoterieLogo'
 
 const NAV_ITEMS = [
   { label: 'Nos univers', href: '#univers', hasDropdown: true },
@@ -42,25 +43,6 @@ function ChevronDown() {
   )
 }
 
-/* Logo fleur SVG inline (edelweiss stylisé au trait) */
-function LogoFlower() {
-  return (
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-      <circle cx="15" cy="15" r="14" fill="#6E7B5E" />
-      {[0,60,120,180,240,300].map((a) => (
-        <ellipse
-          key={a}
-          cx="15" cy="8.5"
-          rx="2.2" ry="4.5"
-          fill="white"
-          fillOpacity="0.85"
-          transform={`rotate(${a},15,15)`}
-        />
-      ))}
-      <circle cx="15" cy="15" r="3.5" fill="white" />
-    </svg>
-  )
-}
 
 export function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -142,14 +124,14 @@ export function Header() {
         <a
           href="#"
           aria-label="La Poterie du Vieil Annecy — retour en haut"
-          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group"
+          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2.5 group"
         >
-          <LogoFlower />
+          <PoterieLogo size={26} />
           <span
-            className="font-caveat text-[22px] font-semibold text-encre group-hover:text-vert transition-colors duration-200"
-            style={{ letterSpacing: '-0.01em' }}
+            className="font-fraunces text-[11px] font-semibold text-encre group-hover:text-terracotta transition-colors duration-200 uppercase"
+            style={{ letterSpacing: '0.18em' }}
           >
-            Poterie
+            La Poterie du Vieil Annecy
           </span>
         </a>
 

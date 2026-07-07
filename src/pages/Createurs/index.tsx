@@ -73,7 +73,7 @@ function CreateurCard({ createur, index }: { createur: typeof CREATEURS[0]; inde
           </div>
         </div>
         <div>
-          <h3 className="font-fraunces font-bold text-encre text-[16px] leading-snug mb-0.5" style={{ letterSpacing: '-0.01em' }}>
+          <h3 className="font-fraunces font-bold text-encre text-[16px] leading-snug mb-0.5" style={{ letterSpacing: '0.02em' }}>
             {createur.nom}
           </h3>
           <p className="font-mulish text-[12px] text-terracotta font-semibold uppercase tracking-wide mb-2">
@@ -109,7 +109,7 @@ export default function CreateursPage() {
         <div className="max-w-[1240px] mx-auto">
           <motion.h1
             className="font-fraunces font-black text-encre leading-tight mb-4"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '0.06em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
@@ -152,7 +152,7 @@ export default function CreateursPage() {
           <SectionReveal>
             <div className="flex items-center gap-4 mb-12">
               <hr className="flex-1 border-pierre/15" />
-              <h2 className="font-fraunces font-bold text-encre text-[20px] md:text-[24px] whitespace-nowrap" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="font-fraunces font-bold text-encre text-[20px] md:text-[24px] whitespace-nowrap" style={{ letterSpacing: '0.04em' }}>
                 Notre collectif
               </h2>
               <hr className="flex-1 border-pierre/15" />
@@ -177,7 +177,7 @@ export default function CreateursPage() {
       <section className="bg-sable border-t border-pierre/10" aria-label="Rejoindre le collectif">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16 text-center">
           <SectionReveal>
-            <h2 className="font-fraunces font-bold text-encre text-[20px] md:text-[24px] mb-3" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="font-fraunces font-bold text-encre text-[20px] md:text-[24px] mb-3" style={{ letterSpacing: '0.04em' }}>
               Vous êtes créateur ?
             </h2>
           </SectionReveal>

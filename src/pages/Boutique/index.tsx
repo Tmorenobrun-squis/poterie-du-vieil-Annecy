@@ -20,7 +20,7 @@ function PageHero({ title, subtitle }: { title: string; subtitle: string }) {
       <div className="max-w-[1240px] mx-auto">
         <motion.h1
           className="font-fraunces font-black text-encre leading-tight mb-4"
-          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.03em' }}
+          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '0.06em' }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
@@ -76,7 +76,7 @@ export default function BoutiquePage() {
                 <span className="font-caveat text-terracotta text-[18px]">L'adresse</span>
               </SectionReveal>
               <SectionReveal delay={0.08}>
-                <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.2rem)', letterSpacing: '-0.025em' }}>
+                <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.6rem, 3.2vw, 2.2rem)', letterSpacing: '0.05em' }}>
                   Sous les arcades du vieil Annecy, depuis le premier jour
                 </h2>
               </SectionReveal>
@@ -117,7 +117,7 @@ export default function BoutiquePage() {
           <SectionReveal>
             <div className="text-center mb-10">
               <span className="font-caveat text-terracotta text-[20px] block mb-1">en images</span>
-              <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[28px]" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[28px]" style={{ letterSpacing: '0.04em' }}>
                 L'ambiance de la boutique
               </h2>
             </div>
@@ -168,7 +168,7 @@ export default function BoutiquePage() {
               <span className="font-caveat text-terracotta text-[18px]">Notre modèle</span>
             </SectionReveal>
             <SectionReveal delay={0.1}>
-              <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '-0.025em' }}>
+              <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '0.05em' }}>
                 Un collectif de créateurs, pas une boutique ordinaire
               </h2>
             </SectionReveal>

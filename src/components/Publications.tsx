@@ -42,7 +42,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 my-10 md:my-12">
       <hr className="flex-1 border-encre/15" />
-      <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[26px] whitespace-nowrap" style={{ letterSpacing: '-0.02em' }}>
+      <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[26px] whitespace-nowrap" style={{ letterSpacing: '0.04em' }}>
         {children}
       </h2>
       <hr className="flex-1 border-encre/15" />

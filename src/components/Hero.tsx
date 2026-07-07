@@ -97,7 +97,7 @@ export function Hero() {
         <div className="flex flex-col gap-6">
           <h1
             className="font-fraunces font-black text-encre leading-[1.05]"
-            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4rem)', letterSpacing: '0.06em' }}
           >
             <motion.span
               className="block"

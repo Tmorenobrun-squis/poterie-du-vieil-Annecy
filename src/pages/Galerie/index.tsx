@@ -219,7 +219,7 @@ export default function GaleriePage() {
         <div className="max-w-[1240px] mx-auto">
           <motion.h1
             className="font-fraunces font-black text-encre leading-tight mb-4"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '0.06em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
@@ -241,21 +241,6 @@ export default function GaleriePage() {
       <section className="bg-sable" aria-label="Galerie de photos">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16">
 
-          {/* Vidéo de la boutique */}
-          <SectionReveal>
-            <div className="mb-10 md:mb-12">
-              <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(46,42,36,0.12)]" style={{ maxWidth: 360 }}>
-                <video
-                  className="w-full h-auto block"
-                  src="/images/boutique-video.mov"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              </div>
-            </div>
-          </SectionReveal>
           {/* 3 columns masonry — hidden on mobile, single column */}
           <div className="hidden md:grid md:grid-cols-3 gap-4" role="list">
             <div role="listitem">
@@ -266,6 +251,21 @@ export default function GaleriePage() {
             </div>
             <div role="listitem">
               {col3.map((item) => <GalleryItem key={item.id} item={item} />)}
+              {/* Vidéo de la boutique */}
+              <SectionReveal>
+                <div style={{ marginBottom: 16 }}>
+                  <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(46,42,36,0.12)]">
+                    <video
+                      className="w-full h-auto block"
+                      src="/images/boutique-video.mov"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  </div>
+                </div>
+              </SectionReveal>
             </div>
           </div>
 
@@ -276,6 +276,21 @@ export default function GaleriePage() {
                 <GalleryItem item={item} />
               </div>
             ))}
+            {/* Vidéo de la boutique — mobile */}
+            <div role="listitem" className="col-span-2">
+              <SectionReveal>
+                <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(46,42,36,0.12)]">
+                  <video
+                    className="w-full h-auto block"
+                    src="/images/boutique-video.mov"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
+              </SectionReveal>
+            </div>
           </div>
         </div>
       </section>

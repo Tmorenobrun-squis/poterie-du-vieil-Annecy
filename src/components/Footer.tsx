@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { PoterieLogo } from './ui/PoterieLogo'
 
 const FOOTER_COLS = [
   {
@@ -21,8 +21,9 @@ const FOOTER_COLS = [
     title: 'Infos pratiques',
     links: [
       { label: '15 rue Sainte-Claire, 74000 Annecy', href: 'https://maps.google.com/?q=15+rue+Sainte-Claire+74000+Annecy', external: true },
-      { label: 'Lun–Sam : 10h–18h [à confirmer]', href: '#' },
-      { label: '04 50 51 91 34', href: 'tel:+33450519134' },
+      { label: 'Lun–Sam : 10h–19h', href: '#' },
+      { label: '+33(0)6 77 33 13 58', href: 'tel:+33677331358' },
+      { label: 'poterie-vieil-annecy@orange.fr', href: 'mailto:poterie-vieil-annecy@orange.fr' },
     ],
   },
   {
@@ -45,14 +46,6 @@ function InstagramIcon() {
 }
 
 export function Footer() {
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    if (email.trim()) setSubmitted(true)
-  }
-
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -67,36 +60,52 @@ export function Footer() {
       <div className="px-8 md:px-10 pt-12 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
 
-          {/* Newsletter */}
+          {/* Identité marque */}
           <div className="md:col-span-1 flex flex-col gap-4">
-            <h3 className="font-fraunces font-bold text-encre text-[16px]" style={{ letterSpacing: '-0.01em' }}>
-              Restez informé de nos nouveautés
-            </h3>
-            <p className="font-mulish text-[13px] text-pierre leading-snug">
-              Recevez en avant-première nos arrivages et événements.
-            </p>
-            {submitted ? (
-              <p className="font-mulish text-[13px] text-vert font-semibold">Merci ! À bientôt.</p>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-2" noValidate>
-                <label htmlFor="footer-email" className="sr-only">Votre adresse e-mail</label>
-                <input
-                  id="footer-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="votre@email.fr"
-                  required
-                  className="px-4 py-2.5 rounded-full border border-bois/30 bg-creme font-mulish text-[13px] text-encre placeholder:text-pierre/50 focus:outline-none focus:ring-2 focus:ring-dore/40"
-                />
-                <button
-                  type="submit"
-                  className="px-5 py-2.5 rounded-full bg-encre text-creme font-mulish font-semibold text-[13px] hover:bg-encre/85 transition-colors duration-200 cursor-pointer self-start"
+            <div className="flex items-center gap-3">
+              <PoterieLogo size={38} />
+              <div className="flex flex-col">
+                <span
+                  className="font-fraunces font-semibold text-encre text-[10px] uppercase"
+                  style={{ letterSpacing: '0.14em' }}
                 >
-                  Envoyer
-                </button>
-              </form>
-            )}
+                  La Poterie
+                </span>
+                <span
+                  className="font-fraunces font-semibold text-encre text-[10px] uppercase"
+                  style={{ letterSpacing: '0.14em' }}
+                >
+                  du Vieil Annecy
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1">
+              <p className="font-mulish text-[12px] text-pierre">Maître Artisan Potier</p>
+              <p className="font-mulish text-[12px] text-pierre">Groupement de créateurs</p>
+              <p className="font-mulish text-[12px] text-pierre">Objets de décoration</p>
+            </div>
+            <div className="flex flex-col gap-1.5 pt-1">
+              <a
+                href="tel:+33677331358"
+                className="font-mulish text-[12px] text-pierre hover:text-encre transition-colors duration-200"
+              >
+                +33(0)6 77 33 13 58
+              </a>
+              <a
+                href="mailto:poterie-vieil-annecy@orange.fr"
+                className="font-mulish text-[12px] text-pierre hover:text-encre transition-colors duration-200"
+              >
+                poterie-vieil-annecy@orange.fr
+              </a>
+              <a
+                href="https://maps.google.com/?q=15+rue+Sainte-Claire+74000+Annecy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mulish text-[12px] text-pierre hover:text-encre transition-colors duration-200"
+              >
+                15 rue Sainte-Claire, 74000 Annecy
+              </a>
+            </div>
           </div>
 
           {/* 4 colonnes liens */}

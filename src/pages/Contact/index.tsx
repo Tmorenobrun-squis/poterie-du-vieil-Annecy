@@ -228,7 +228,7 @@ export default function ContactPage() {
         <div className="max-w-[1240px] mx-auto">
           <motion.h1
             className="font-fraunces font-black text-encre leading-tight mb-4"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '0.06em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
@@ -256,7 +256,7 @@ export default function ContactPage() {
 
               <SectionReveal>
                 <div className="flex flex-col gap-4">
-                  <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '-0.015em' }}>
+                  <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '0.03em' }}>
                     Coordonnées
                   </h2>
 
@@ -322,7 +322,7 @@ export default function ContactPage() {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-2">
                     <span className="text-terracotta"><ClockIcon /></span>
-                    <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '-0.015em' }}>
+                    <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '0.03em' }}>
                       Horaires
                     </h2>
                   </div>
@@ -350,7 +350,7 @@ export default function ContactPage() {
             {/* Colonne carte */}
             <SectionReveal delay={0.12}>
               <div className="flex flex-col gap-4">
-                <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '-0.015em' }}>
+                <h2 className="font-fraunces font-bold text-encre text-[20px]" style={{ letterSpacing: '0.03em' }}>
                   Plan d'accès
                 </h2>
                 <div
@@ -397,7 +397,7 @@ export default function ContactPage() {
                 <span className="font-caveat text-terracotta text-[18px]">Écrivez-nous</span>
               </SectionReveal>
               <SectionReveal delay={0.08}>
-                <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '-0.025em' }}>
+                <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '0.05em' }}>
                   Une commande, une question, une idée ?
                 </h2>
               </SectionReveal>
@@ -433,7 +433,7 @@ export default function ContactPage() {
       <section className="bg-sable border-t border-pierre/10" aria-label="Comment venir">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-14">
           <SectionReveal>
-            <h2 className="font-fraunces font-bold text-encre text-[18px] md:text-[20px] mb-6" style={{ letterSpacing: '-0.015em' }}>
+            <h2 className="font-fraunces font-bold text-encre text-[18px] md:text-[20px] mb-6" style={{ letterSpacing: '0.03em' }}>
               Comment nous rejoindre
             </h2>
           </SectionReveal>

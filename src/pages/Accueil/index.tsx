@@ -129,7 +129,7 @@ function HeroSection() {
         {/* Titre principal */}
         <motion.h1
           className="font-fraunces text-sable leading-[1.0] mb-8"
-          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.03em', textShadow: '0 2px 20px rgba(0,0,0,0.65)' }}
+          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '0.06em', textShadow: '0 2px 20px rgba(0,0,0,0.65)' }}
           initial={prefersReduced ? false : { opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.22, duration: 0.7 }}
@@ -215,7 +215,7 @@ function BandeauAtouts() {
                 {a.icon}
               </div>
               <div>
-                <h3 className="font-fraunces font-bold text-encre text-[17px] leading-snug mb-1.5" style={{ letterSpacing: '-0.01em' }}>
+                <h3 className="font-fraunces font-bold text-encre text-[17px] leading-snug mb-1.5" style={{ letterSpacing: '0.02em' }}>
                   {a.label}
                 </h3>
                 <p className="font-mulish text-[13px] text-pierre leading-relaxed">
@@ -238,7 +238,7 @@ function UniversApercu() {
         <SectionReveal>
           <div className="flex items-center gap-4 mb-12">
             <hr className="flex-1 border-pierre/15" />
-            <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[28px] whitespace-nowrap" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="font-fraunces font-bold text-encre text-[22px] md:text-[28px] whitespace-nowrap" style={{ letterSpacing: '0.04em' }}>
               Nos univers
             </h2>
             <hr className="flex-1 border-pierre/15" />
@@ -264,7 +264,7 @@ function UniversApercu() {
                     />
                   </div>
                   <div className="pt-4 pb-4 px-3">
-                    <h3 className="font-fraunces font-bold text-encre text-[17px] leading-snug mb-1.5 group-hover:text-terracotta transition-colors duration-200" style={{ letterSpacing: '-0.01em' }}>
+                    <h3 className="font-fraunces font-bold text-encre text-[17px] leading-snug mb-1.5 group-hover:text-terracotta transition-colors duration-200" style={{ letterSpacing: '0.02em' }}>
                       {u.label}
                     </h3>
                     <p className="font-mulish text-[13.5px] text-pierre leading-relaxed">
@@ -339,7 +339,7 @@ function VieuxAnnecySection() {
           <SectionReveal delay={0.1}>
             <h2
               className="font-fraunces font-black text-sable leading-tight"
-              style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', letterSpacing: '-0.03em' }}
+              style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3rem)', letterSpacing: '0.06em' }}
             >
               Au cœur<br />du vieil Annecy
             </h2>
@@ -429,7 +429,7 @@ function HistoireExtrait() {
               <span className="font-caveat text-terracotta text-[18px]">Notre histoire</span>
             </SectionReveal>
             <SectionReveal delay={0.18}>
-              <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '-0.025em' }}>
+              <h2 className="font-fraunces font-bold text-encre leading-tight" style={{ fontSize: 'clamp(1.7rem, 3.5vw, 2.4rem)', letterSpacing: '0.05em' }}>
                 Un lieu de vie sous<br />les arcades médiévales
               </h2>
             </SectionReveal>
@@ -483,7 +483,7 @@ function MarqueeBand() {
         {[0, 1].map(rep => (
           <div key={rep} style={{ display: 'flex', gap: 48, paddingRight: 48 }}>
             {items.map(item => (
-              <span key={item} className="font-fraunces text-[21px] font-medium whitespace-nowrap tracking-[-0.01em]">
+              <span key={item} className="font-fraunces text-[21px] font-medium whitespace-nowrap tracking-[0.04em]">
                 {item}
                 <span className="text-or mx-5" aria-hidden="true">✻</span>
               </span>
@@ -513,7 +513,7 @@ function CreateursTease() {
               <span className="font-caveat text-terracotta text-[22px] block">le collectif</span>
             </SectionReveal>
             <SectionReveal delay={0.06}>
-              <h2 className="font-fraunces font-semibold text-encre" style={{ fontSize: 'clamp(1.7rem, 3.6vw, 2.6rem)', letterSpacing: '-0.02em' }}>
+              <h2 className="font-fraunces font-semibold text-encre" style={{ fontSize: 'clamp(1.7rem, 3.6vw, 2.6rem)', letterSpacing: '0.04em' }}>
                 Des mains d'ici
               </h2>
             </SectionReveal>
@@ -613,7 +613,7 @@ function VisiteBandeau() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="flex flex-col gap-4">
             <SectionReveal>
-              <h2 className="font-fraunces font-bold text-sable leading-tight" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
+              <h2 className="font-fraunces font-bold text-sable leading-tight" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '0.04em' }}>
                 Venez nous rendre visite
               </h2>
             </SectionReveal>

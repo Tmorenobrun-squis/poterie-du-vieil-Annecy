@@ -150,7 +150,7 @@ export default function UniversPage() {
           </motion.span>
           <motion.h1
             className="font-fraunces font-semibold text-encre leading-tight mb-4"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.02em' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '0.04em' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.06 }}
@@ -182,7 +182,7 @@ export default function UniversPage() {
                     <span className="text-or text-[18px]" aria-hidden="true">✻</span>
                     <h2
                       className="font-fraunces font-semibold text-encre"
-                      style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2rem)', letterSpacing: '-0.015em' }}
+                      style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2rem)', letterSpacing: '0.03em' }}
                     >
                       {univers.label}
                     </h2>
@@ -234,7 +234,7 @@ export default function UniversPage() {
       <section className="bg-argile border-t border-or/20" aria-label="Venez nous voir">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16 text-center">
           <SectionReveal>
-            <p className="font-fraunces italic text-encre/70 text-[18px] md:text-[21px] leading-relaxed max-w-[560px] mx-auto mb-8" style={{ letterSpacing: '-0.01em' }}>
+            <p className="font-fraunces italic text-encre/70 text-[18px] md:text-[21px] leading-relaxed max-w-[560px] mx-auto mb-8" style={{ letterSpacing: '0.02em' }}>
               « La meilleure façon de découvrir nos univers ? Venir les toucher. »
             </p>
           </SectionReveal>
