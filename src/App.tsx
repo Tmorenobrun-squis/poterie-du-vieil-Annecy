@@ -14,9 +14,15 @@ import ContactPage from './pages/Contact'
 import CommanderPage from './pages/Commander'
 import MentionsLegalesPage from './pages/MentionsLegales'
 import ConfidentialitePage from './pages/Confidentialite'
+import StudioPage from './pages/Studio'
 
 function AnimatedRoutes() {
   const location = useLocation()
+
+  if (location.pathname.startsWith('/studio')) {
+    return <Routes><Route path="/studio/*" element={<StudioPage />} /></Routes>
+  }
+
   return (
     <AnimatePresence mode="wait" initial={false} onExitComplete={scrollToTop}>
       <Routes location={location} key={location.pathname}>
