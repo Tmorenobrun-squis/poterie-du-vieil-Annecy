@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { useCart } from '../../contexts/CartContext'
 
 const NAV_LINKS = [
   { label: 'La boutique', to: '/boutique' },
@@ -18,7 +17,6 @@ export function Header() {
   const prefersReduced            = useReducedMotion()
   const menuRef                   = useRef<HTMLDivElement>(null)
   const isHome                    = location.pathname === '/'
-  const { cartCount }             = useCart()
 
   useEffect(() => {
     let rafId: number
@@ -123,21 +121,13 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Commander desktop */}
+        {/* CTA Formulaire desktop */}
         <Link
           to="/commander"
           className="hidden md:inline-flex items-center gap-2 px-5 py-[11px] rounded-full bg-terracotta text-sable font-mulish font-semibold text-[14px] hover:bg-terracotta/85 transition-all duration-200 shrink-0 shadow-[0_6px_16px_-8px_rgba(162,58,46,0.7)]"
-          aria-label="Commander une pièce"
+          aria-label="Formulaire de commande"
         >
-          Commander
-          {cartCount > 0 && (
-            <span
-              aria-label={`${cartCount} pièce(s) dans votre demande`}
-              className="bg-sable text-terracotta min-w-[21px] h-[21px] rounded-full inline-grid place-items-center text-[12px] font-bold px-1"
-            >
-              {cartCount}
-            </span>
-          )}
+          Faire une demande
         </Link>
 
         {/* Burger mobile */}
@@ -193,12 +183,7 @@ export function Header() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[16px] hover:bg-terracotta/85 transition-colors duration-200"
               >
-                Commander
-                {cartCount > 0 && (
-                  <span className="bg-sable text-terracotta min-w-[21px] h-[21px] rounded-full inline-grid place-items-center text-[12px] font-bold px-1">
-                    {cartCount}
-                  </span>
-                )}
+                Faire une demande
               </Link>
             </nav>
           </motion.div>

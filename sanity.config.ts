@@ -8,6 +8,7 @@ import { parametresSchema } from './src/sanity/schemas/parametres'
 export default defineConfig({
   name: 'poterie-vieil-annecy',
   title: 'La Poterie du Vieil Annecy',
+  basePath: '/studio',
   projectId: 'tpsv1jht',
   dataset: 'production',
   plugins: [

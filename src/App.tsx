@@ -4,7 +4,6 @@ import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { BackToTop } from './components/ui/BackToTop'
 import { SmoothScrollProvider, scrollToTop } from './components/ui/SmoothScrollProvider'
-import { CartProvider } from './contexts/CartContext'
 import AccueilPage from './pages/Accueil'
 import BoutiquePage from './pages/Boutique'
 import UniversPage from './pages/Univers'
@@ -43,26 +42,24 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-terracotta focus:text-sable focus:rounded-lg focus:font-mulish focus:text-sm"
-        >
-          Passer au contenu principal
-        </a>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-terracotta focus:text-sable focus:rounded-lg focus:font-mulish focus:text-sm"
+      >
+        Passer au contenu principal
+      </a>
 
-        {/* Fixed elements MUST stay outside SmoothScrollProvider.
-            CSS transforms break position:fixed containment on children. */}
-        <Header />
-        <BackToTop />
+      {/* Fixed elements MUST stay outside SmoothScrollProvider.
+          CSS transforms break position:fixed containment on children. */}
+      <Header />
+      <BackToTop />
 
-        <SmoothScrollProvider>
-          <main id="main-content">
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-        </SmoothScrollProvider>
-      </CartProvider>
+      <SmoothScrollProvider>
+        <main id="main-content">
+          <AnimatedRoutes />
+        </main>
+        <Footer />
+      </SmoothScrollProvider>
     </BrowserRouter>
   )
 }

@@ -561,7 +561,7 @@ function CreateursTease() {
 /* ─── Bandeau CTA ─── */
 function CtaBand() {
   return (
-    <section className="bg-sable" aria-label="Commander une pièce">
+    <section className="bg-sable" aria-label="Faire une demande">
       <div className="max-w-[1240px] mx-auto px-5 md:px-8 pb-20">
         <div className="bg-terracotta text-sable rounded-[22px] px-8 md:px-12 py-14 text-center relative overflow-hidden">
           {/* Décorations en arrière-plan */}
@@ -580,7 +580,7 @@ function CtaBand() {
           </SectionReveal>
           <SectionReveal delay={0.12}>
             <p className="font-mulish text-[16.5px] opacity-92 max-w-[540px] mx-auto mb-7 leading-relaxed">
-              Réservez-la en quelques clics : la commande est une simple demande, le règlement se fait en boutique au retrait.
+              Parcourez nos univers artisanaux, puis envoyez-nous un message — la boutique vous recontacte pour confirmer disponibilité et prix. Aucun paiement en ligne.
             </p>
           </SectionReveal>
           <SectionReveal delay={0.18}>

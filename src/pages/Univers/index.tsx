@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { SectionReveal } from '../../components/ui/SectionReveal'
-import { useCart } from '../../contexts/CartContext'
 
 function useMeta(title: string, description: string) {
   useEffect(() => {
@@ -47,17 +46,6 @@ const UNIVERS = [
     ],
   },
   {
-    label: 'Doudous & enfants',
-    tag: 'Cadeaux naissance',
-    desc: 'Doudous tout doux, veilleuses et petites vaisselles pour les plus jeunes.',
-    img: '/images/univers-doudous.jpg',
-    items: [
-      { name: 'Espace enfants', desc: 'Peluches, doudous et jouets du terroir savoyard.', img: '/images/shot-5.jpg' },
-      { name: 'Poulette en céramique', desc: 'Figurine blanche à pois noirs, décor original.', img: '/images/galerie-8.jpg' },
-      { name: 'Assiettes colorées enfant', desc: 'Vaisselle céramique aux couleurs vives, lavable au lave-vaisselle.', img: '/images/galerie-2.jpg' },
-    ],
-  },
-  {
     label: 'Bijoux & accessoires',
     tag: 'Artisanat',
     desc: 'Pièces uniques en argent, laiton et matières naturelles, façonnées par le collectif.',
@@ -81,10 +69,9 @@ const UNIVERS = [
   },
 ]
 
-function ProductCard({ name, desc, img, onAdd }: { name: string; desc: string; img: string; onAdd: () => void }) {
+function ProductCard({ name, desc, img }: { name: string; desc: string; img: string }) {
   return (
     <div className="bg-sable rounded-2xl overflow-hidden flex flex-col shadow-[0_4px_24px_-8px_rgba(33,29,24,0.12)] border border-argile hover:shadow-[0_8px_32px_-8px_rgba(33,29,24,0.18)] transition-shadow duration-300">
-      {/* Photo produit */}
       <div className="aspect-[4/3] overflow-hidden bg-argile">
         <img
           src={img}
@@ -93,7 +80,6 @@ function ProductCard({ name, desc, img, onAdd }: { name: string; desc: string; i
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.04]"
         />
       </div>
-      {/* Contenu */}
       <div className="p-4 flex flex-col flex-1 gap-2">
         <h3 className="font-fraunces font-semibold text-encre text-[15px] leading-snug">
           {name}
@@ -101,13 +87,6 @@ function ProductCard({ name, desc, img, onAdd }: { name: string; desc: string; i
         <p className="font-mulish text-pierre text-[12.5px] leading-relaxed flex-1">
           {desc}
         </p>
-        <button
-          type="button"
-          onClick={onAdd}
-          className="mt-1 w-full border-[1.5px] border-terracotta text-terracotta bg-transparent px-3 py-2 rounded-full font-mulish font-semibold text-[11px] sm:text-[12.5px] cursor-pointer hover:bg-terracotta hover:text-sable transition-colors duration-200 leading-snug"
-        >
-          + Ajouter à ma commande
-        </button>
       </div>
     </div>
   )
@@ -118,14 +97,6 @@ export default function UniversPage() {
     'Nos univers — La Poterie du Vieil Annecy',
     'Explorez nos univers artisanaux : poterie savoyarde, art de la table, déco de montagne, bijoux, doudous et illustrations. Boutique à Annecy.',
   )
-
-  const { addToCart } = useCart()
-  const navigate = useNavigate()
-
-  function handleAdd(name: string) {
-    addToCart(name)
-    navigate('/commander')
-  }
 
   return (
     <motion.div
@@ -146,7 +117,7 @@ export default function UniversPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            vitrine · sans prix en ligne
+            boutique vitrine · entrée libre
           </motion.span>
           <motion.h1
             className="font-fraunces font-semibold text-encre leading-tight mb-4"
@@ -163,8 +134,8 @@ export default function UniversPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.5 }}
           >
-            Ajoutez les pièces qui vous plaisent à votre demande. La boutique vous recontacte
-            pour confirmer la disponibilité et le prix — aucun paiement en ligne.
+            Découvrez nos créations artisanales. Une pièce vous attire ?
+            Faites-nous une demande — la boutique vous recontacte pour confirmer la disponibilité et le prix.
           </motion.p>
         </div>
       </div>
@@ -219,7 +190,6 @@ export default function UniversPage() {
                         name={item.name}
                         desc={item.desc}
                         img={item.img}
-                        onAdd={() => handleAdd(item.name)}
                       />
                     </SectionReveal>
                   ))}
@@ -244,7 +214,7 @@ export default function UniversPage() {
                 to="/commander"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-terracotta text-sable font-mulish font-semibold text-[14px] hover:bg-terracotta/85 transition-colors duration-200 shadow-[0_8px_20px_-10px_rgba(162,58,46,0.6)]"
               >
-                Faire une demande de commande
+                Faire une demande
               </Link>
               <Link
                 to="/contact"
